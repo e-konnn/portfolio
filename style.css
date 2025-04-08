@@ -1,5 +1,37 @@
+/* Responsive Design */
+header {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+/* PC */
+@media (max-width: 1440px){
+  header {
+    width: 250px;
+    height: 350px;
+  }
+}
+
+/* Tablet */
+@media (max-width: 1024px){
+  header {
+    width: 250px;
+    height: 350px;
+  }
+}
+
+/* Phone */
+@media (max-width: 600px){
+  header {
+    flex-direction: column;
+  }
+}
+
+
+
 * {
-  background-color: #F5F5DC;
+  background-color: #F5F5DC;  
   margin: 0;
   padding: 0;
   box-sizing: border-box;
