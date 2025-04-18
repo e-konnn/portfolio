@@ -1,149 +1,143 @@
 * {
-  background-color: #F5F5DC;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  text-decoration: none;
-  border: none;
-  outline: none;
-  font-family: "Nunito", sans-serif;
 }
 
-html{
-  font-size: 62.5%;
+html, body {
+  background-color: black;
+  overflow-x: hidden;
 }
 
-header{
-  margin-top: 20px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 1rem 9%;
-  background-color: transparent;
-  filter: drop-shadow(10px);
+/* === WRAPPER WITH BACKGROUND === */
+.background-wrapper {
+  background: url('image/midnightangle.png') no-repeat center center;
+  background-size: 2000px auto; /* You can tweak this */
+  background-attachment: fixed; /* 🎯 Parallax effect */
+  background-color: black;
+  position: relative;
+}
+
+/* Header / Navbar */
+header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 100;
+  position: fixed;
+  width: 95%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.8); /* semi-transparent background */
+  backdrop-filter: blur(6px); /* optional glass effect */
+  padding: 1rem 2rem; /* Added padding for spacing */
 }
 
+
+/* graphic logo */
 .logo{
-  font-size: 3rem;
-  color: black;
-  font-weight: 800;
+  display: flex;
+  align-items: center;
+}
+
+.img-logo {
   cursor: pointer;
+  height: 100px; /* Set a consistent height */
   transition: 0.5s ease;
 }
 
-.logo:hover{
+.img-logo:hover {
   transform: scale(1.1);
 }
 
-nav a{
-  font-size: 1.8rem;
-  color: black;
+nav {
+  display: flex;
+}
+
+nav a {
+  font-size: 1.4rem;
+  color: white;
   margin-left: 4rem;
   font-weight: 500;
   transition: 0.3s ease;
-  border-bottom: 3px solid transparent;
-}
-
-h1 {
-font-size: 36px;
-color: black;
-text-align: center;
+  font-family: "Cormorant Garamond", serif;
+  text-decoration: none; /* ✅ this removes the underline */
 }
 
 nav a:hover,
-nav a.active{
-  color: black;
-  border-bottom: 3px solid #6F4E37;
+nav a.active {
+  color: white;
+  transform: scale(1.1);
 }
 
-@media(max-width: 995px){
-  nav{
-    position: absolute;
-    top: 100%;
-    right: 0;
-    width: 40%;
-    border-left: 3px solid #6F4E37;
-    border-bottom: 3px solid #6F4E37;
-    border-bottom-left-radius: 2rem;
-    padding: 1rem solid;
-    background-color: #F5F5DC;
-    border-top: 0.1rem solid rgba(0, 0, 0, 1);
-  }
-
-  nav.active{
-    display: block;
-  }
-
-  nav a{
-    display: block;
-    font-size: 2rem;
-    margin: 3rem 0;
-  }
-
-  nav a:hover,
-  nav a.active{
-    padding: 1rem;
-    border-radius: 0.5rem;
-    border-bottom: 0.5rem solid #6F4E37;
-  }
-}
-
-section{
+/* Section */
+section {
   min-height: 100vh;
-  padding: 5rem 9% 5rem;
 }
 
-.home{
+/* Home Section */
+.home {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 8rem;
-  background-color: #F5F5DC;
+  background: transparent; /* Don't override the wrapper's background */
+  padding-top: 120px; /* Space for fixed navbar */
 }
 
-.home .home-content h1{
+/* === HOME TEXT === */
+.home .home-content h1 {
   font-size: 6rem;
-  font-weight: 700;
   line-height: 1.3;
+  color: white;
+  font-weight: 900;
 }
 
-span{
-  color: #6F4E37;
+.home-content h1,
+.home-content p,
+.typing-text {
+  text-shadow:
+    2px 2px 4px rgba(0, 0, 0, 0.8),
+    0 0 8px rgba(0, 0, 0, 0.6);
 }
 
-.home-content h3{
-  font-size: 4rem;
+span {
+  color: gray;
+}
+
+.home-content p {
+  font-size: 20px;
   margin-bottom: 1rem;
-  font-weight: 700;
 }
 
-.home-img{
+/* === IMAGE === */
+.home-img {
   border-radius: 50%;
 }
 
-.home-img img{
+.home-img img {
   position: relative;
-  width: 32vh;
+  width: 250px;
+  max-width: 100%;
+  height: auto;
   border-radius: 50%;
-  box-shadow:  0 0 25px solid #6F4E37;
+  border: 3px solid #ccc;
+  box-shadow:
+    0 0 10px rgba(0, 0, 0, 0.8),
+    0 0 25px rgba(0, 0, 0, 0.5); /* soft dark glow */
   cursor: pointer;
   transition: 0.2s linear;
 }
 
-
-h2 {
-font-size: 30px;
-color: black;
-text-align: center;
+/* Typography */
+h1 {
+  font-size: 36px;
+  color: white;
+  font-family: "Cormorant Garamond", serif;
 }
 
 p {
-  font-size: 20px; 
-  color: black;
-  text-align: center;
+  font-size: 20px;
+  color: white;
+  font-family: "Raleway", serif;
 }

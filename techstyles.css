@@ -1,0 +1,31 @@
+html{
+  background-color: black;
+  margin: 10px;
+}
+
+/* Nav Bar */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 80px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: black;
+}
+
+.nav-links{
+  text-decoration: none;
+  color: white;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.ts-content{
+  color: white;
+}
