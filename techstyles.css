@@ -1,31 +1,90 @@
-html{
-  background-color: black;
-  margin: 10px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Nav Bar */
+html, body {
+  background-color: black;
+  overflow-x: hidden;
+}
 
-.navbar {
+/* Header / Navbar */
+header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 25px 80px;
   position: fixed;
-  width: 100%;
+  width: 95%;
   top: 0;
   left: 0;
   z-index: 1000;
   background-color: black;
+  padding: 1rem;
 }
 
-.nav-links{
-  text-decoration: none;
+/* graphic logo */
+.logo{
+  display: flex;
+  align-items: center;
+}
+
+.img-logo {
+  cursor: pointer;
+  height: 100px;
+  transition: 0.5s ease;
+}
+
+.img-logo:hover {
+  transform: scale(1.1);
+}
+
+nav {
+  display: flex;
+}
+
+nav a {
+  font-size: 1.4rem;
   color: white;
+  margin-left: 4rem;
+  font-weight: 500;
+  transition: 0.3s ease;
   font-family: "Cormorant Garamond", serif;
-  font-size: 15px;
-  font-weight: 700;
+  text-decoration: none;
 }
 
-.ts-content{
+nav a:hover,
+nav a.active {
   color: white;
+  transform: scale(1.1);
+}
+
+.tech-content{
+  min-height: 100vh;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 8rem;
+  padding-top: 120px;
+}
+
+span{
+  color: silver;
+}
+
+.tech-text h1{
+  font-size: 6rem;
+  line-height: 1.3;
+  color: white;
+  font-weight: 900;
+  font-family: "Cormorant Garamond", serif;
+}
+
+.tech-text p{
+  font-size: 20px;
+  line-height: 1.3;
+  color: white;
+  font-weight: 300;
+  font-family: "Raleway", serif;
 }
