@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    background-color: black;
+    overflow-x: hidden;
+  }
+  
+  /* imagebg */
+  .background-wrapper {
+    background: url('image/midnightangle.png') no-repeat center center;
+    background-size: 2000px auto;
+    background-attachment: fixed;
+    background-color: black;
+    position: relative;
+  }
+  
+  /* Header / Navbar */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(6px);
+    padding: 1rem 2rem;
+  }
+  
+  
+  /* graphic logo */
+  .logo{
+    display: flex;
+    align-items: center;
+  }
+  
+  .img-logo {
+    cursor: pointer;
+    height: 60px;
+    transition: 0.5s ease;
+  }
+  
+  .img-logo:hover {
+    transform: scale(1.1);
+  }
+  
+  nav {
+    display: flex;
+  }
+  
+  nav a {
+    font-size: 15px;
+    color: white;
+    margin-left: 4rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+    font-family: "Cormorant Garamond", serif;
+    text-decoration: none;
+  }
+  
+  nav a:hover,
+  nav a.active {
+    color: white;
+    transform: scale(1.1);
+  }
+  
+  /* Section */
+  section {
+    min-height: 100vh;
+  }
+  
+  /* Home Section */
+  .home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding-top: 120px;
+    min-height: 100vh;
+    background: transparent;
+  }
+  
+  .home-content {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 2rem;
+    border-radius: 1rem;
+    backdrop-filter: blur(3px); 
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+    text-align: center;
+    max-width: 600px;
+  }
+  
+  .home .home-content h1{
+    font-size: 6rem;
+    line-height: 1.3;
+    color: white;
+    font-weight: 900;
+  }
+  
+  .home-content h1,
+  .home-content p {
+    text-shadow:
+      2px 2px 4px rgba(0, 0, 0, 0.8),
+      0 0 8px rgba(0, 0, 0, 0.6);
+  }
+  
+  span {
+    color: silver;
+  }
+  
+  .home-content p {
+    font-size: 20px;
+    margin-bottom: 1rem;
+  }
+  
+  /* image */
+  .home-img {
+    border-radius: 50%;
+  }
+  
+  .home-img img {
+    position: relative;
+    width: 250px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%;
+    border: 3px solid #ccc;
+    box-shadow:
+      0 0 10px rgba(0, 0, 0, 0.8),
+      0 0 25px rgba(0, 0, 0, 0.5); 
+    cursor: pointer;
+    transition: 0.2s linear;
+  }
+  
+  /* Typography */
+  h1 {
+    font-size: 36px;
+    color: white;
+    font-family: "Cormorant Garamond", serif;
+  }
+  
+  p {
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    font-family: "Raleway", serif;
+  }
