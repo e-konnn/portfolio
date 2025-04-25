@@ -109,13 +109,13 @@ nav a.active {
   background: white;
 }
 
+/* card */
 .card-container {
   display: flex;
   justify-content: center;
   margin-bottom: 2rem;
 }
-  
-/* card */
+
 .card {
   border: 1px solid #333;
   transition: transform 0.3s ease;
