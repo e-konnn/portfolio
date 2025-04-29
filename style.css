@@ -8,71 +8,65 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background-color: black;
   color: white;
+  transition: background-color 0.5s ease;
 }
 
-/* imagebg */
-.background-wrapper {
-  background: url('image/midnightangle.png') no-repeat center center;
-  background-size: 1200px auto;
-  background-attachment: fixed;
+/* Particles.js Container - FIXED */
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
   background-color: black;
-  position: relative;
 }
 
-/* section */
+/* Section */
 section {
   min-height: 100vh;
+  background: transparent;
+  position: relative;
+  z-index: 1;
 }
 
-/* card */
-
+/* Card */
 .custom-card {
   width: 22rem;
-  background-color: transparent !important;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: black !important;
+  border: 1px solid black;
   border-radius: 1rem;
   backdrop-filter: blur(6px);
   box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
-  color: black;
+  color: white;
   font-family: "Cormorant Garamond", serif;
+  transition: all 0.3s ease;
 }
 
 .custom-card .card-title {
   font-size: 2rem;
   margin-top: 1rem;
-  color: black;
+  color: white !important;
 }
 
 .custom-card .card-text {
   font-size: 1rem;
   font-family: "Raleway", sans-serif;
   margin-bottom: 1rem;
-  color: black;
+  color: white !important;
 }
 
 .custom-card .btn {
   font-family: "Raleway", sans-serif;
   padding: 0.5rem 1rem;
   transition: all 0.3s ease;
-  color: black;
+  color: white !important;
+  border-color: white;
 }
 
 .custom-card .btn:hover {
-  background-color: silver;
-  color: black;
+  background-color: white;
+  color: black !important;
   transform: scale(1.05);
-}
-
-.initials h3 a {
-  color: white;
-  text-decoration: none;
-  font-family: "Cormorant Garamond", serif;
-}
-
-.initials h3 a:hover {
-  color: silver;
 }
 
 /* Typography */
