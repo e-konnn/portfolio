@@ -12,7 +12,7 @@ html, body {
   transition: background-color 0.5s ease;
 }
 
-/* Particles.js Container - FIXED */
+/* Particles.js Container */
 #particles-js {
   position: fixed;
   width: 100%;
@@ -27,58 +27,107 @@ section {
   background: transparent;
   position: relative;
   z-index: 1;
+  padding: 2rem;
 }
 
-/* Card */
-.custom-card {
-  width: 22rem;
+/* Landscape Card */
+.landscape-card {
+  width: 100%;
+  max-width: 800px;
   background-color: black !important;
-  border: 1px solid black;
-  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 1rem !important;
   backdrop-filter: blur(6px);
   box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
   color: white;
   font-family: "Cormorant Garamond", serif;
   transition: all 0.3s ease;
+  overflow: hidden;
 }
 
-.custom-card .card-title {
-  font-size: 2rem;
-  margin-top: 1rem;
-  color: white !important;
+.landscape-card .card-img {
+  width: 210px;
+  height: 210px;
+  object-fit: cover;
+  margin: 1rem;
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
 }
 
-.custom-card .card-text {
-  font-size: 1rem;
-  font-family: "Raleway", sans-serif;
+.landscape-card:hover .card-img {
+  transform: scale(1.05);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.landscape-card .card-body {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.landscape-card .card-title {
+  font-size: 2.5rem;
   margin-bottom: 1rem;
   color: white !important;
 }
 
-.custom-card .btn {
+.landscape-card .card-text {
+  font-size: 1.2rem;
   font-family: "Raleway", sans-serif;
-  padding: 0.5rem 1rem;
+  margin-bottom: 2rem;
+  color: white !important;
+}
+
+.buttons-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.landscape-card .btn {
+  font-family: "Raleway", sans-serif;
+  padding: 0.5rem 1.5rem;
   transition: all 0.3s ease;
   color: white !important;
   border-color: white;
+  border-radius: 50px;
+  font-weight: 500;
 }
 
-.custom-card .btn:hover {
+.landscape-card .btn:hover {
   background-color: white;
   color: black !important;
   transform: scale(1.05);
 }
 
-/* Typography */
-h1 {
-  font-size: 36px;
-  color: white;
-  font-family: "Cormorant Garamond", serif;
-}
-
-p {
-  font-size: 20px;
-  color: white;
-  text-align: center;
-  font-family: "Raleway", serif;
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .landscape-card {
+    max-width: 90%;
+  }
+  
+  .landscape-card .row {
+    flex-direction: column;
+  }
+  
+  .landscape-card .card-img {
+    width: 180px;
+    height: 180px;
+    margin: 2rem auto;
+  }
+  
+  .landscape-card .card-body {
+    padding: 1.5rem;
+    text-align: center;
+  }
+  
+  .landscape-card .card-title {
+    font-size: 2rem;
+  }
+  
+  .buttons-container {
+    justify-content: center;
+  }
 }
