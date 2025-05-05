@@ -9,6 +9,30 @@ html, body {
   overflow-x: hidden;
 }
 
+/* Page Transition */
+.page-transition {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+/* Transition link styles */
+.transition-link {
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+html.is-changing .transition-link {
+  transition: none;
+}
+
 /* Header / Navbar */
 header {
   display: flex;

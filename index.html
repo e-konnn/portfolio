@@ -12,24 +12,7 @@
       <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   </head>
   <body>
-    <header>
-      <div class="logo">
-        <a href="index.html">
-          <img src="image/mainlogo.png" alt="ENlogo" class="img-logo pulse">
-        </a>
-      </div>    
-      <nav class="nav-links">
-        <a href="index.html" class="slide">HOME</a>
-        <a href="about.html" class="slide">ABOUT</a>
-        <a href="techstack.html" class="slide">TECH STACK</a>
-        <a href="contact.html" class="slide">CONTACT</a>
-      </nav>
-      <button class="hamburger" aria-label="Menu">
-        <span class="hamburger-box">
-          <span class="hamburger-inner"></span>
-        </span>
-      </button>
-    </header>
+    <div id="page-transition" class="page-transition"></div>
     <div id="particles-js"></div>
     <section class="home d-flex justify-content-center align-items-center">
       <div class="card custom-card landscape-card">
@@ -42,9 +25,9 @@
               <h5 class="card-title">Hey! I'm Edel</h5>
               <p class="card-text">An Aspiring Software Developer</p>
               <div class="buttons-container mt-4">
-                <a href="about.html" class="btn btn-outline-light me-2">About</a>
-                <a href="techstack.html" class="btn btn-outline-light me-2">Tech Stack</a>
-                <a href="contact.html" class="btn btn-outline-light">Contact</a>
+                <a href="about.html" class="btn btn-outline-light me-2 transition-link">About</a>
+                <a href="techstack.html" class="btn btn-outline-light me-2 transition-link">Tech Stack</a>
+                <a href="contact.html" class="btn btn-outline-light transition-link">Contact</a>
               </div>
             </div>
           </div>
@@ -53,23 +36,34 @@
     </section>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
-      // hamburger menu toggle
-      const hamburger = document.querySelector('.hamburger');
-      const navLinks = document.querySelector('.nav-links');
+      // Page transition function
+      function handleTransition(event) {
+        if (event.target.classList.contains('transition-link')) {
+          event.preventDefault();
+          const href = event.target.getAttribute('href');
+          
+          // Show the transition overlay
+          const transition = document.getElementById('page-transition');
+          transition.style.opacity = '1';
+          transition.style.visibility = 'visible';
+          
+          // After a short delay, navigate to the new page
+          setTimeout(() => {
+            window.location.href = href;
+          }, 500);
+        }
+      }
       
-      hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
-        navLinks.classList.toggle('active');
+      // Apply transition when page loads
+      window.addEventListener('load', function() {
+        const transition = document.getElementById('page-transition');
+        transition.style.opacity = '0';
+        transition.style.visibility = 'hidden';
       });
-
-      document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-          hamburger.classList.remove('active');
-          navLinks.classList.remove('active');
-        });
-      });
-      // Particles.js
+      
+      // Add click event listeners to all transition links
       document.addEventListener('DOMContentLoaded', function() {
+        // Particles.js
         particlesJS("particles-js", {
           "particles": {
             "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
@@ -104,17 +98,9 @@
             }
           }
         });
-        // Active link highlighting
-        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-        const navLinks = document.querySelectorAll('.nav-links a');
         
-        navLinks.forEach(link => {
-          const linkPage = link.getAttribute('href');
-          if (currentPage === linkPage || 
-             (currentPage === '' && linkPage === 'index.html')) {
-            link.classList.add('active');
-          }
-        });
+        // Add click event listener to document for transition links
+        document.addEventListener('click', handleTransition);
       });
     </script>
   </body>
