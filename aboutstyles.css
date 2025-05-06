@@ -248,8 +248,10 @@ header {
 .abt-content {
   background-color: black;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   padding-top: 150px;
+  padding-bottom: 3rem;
 }
 
 @media (max-width: 768px) {
@@ -279,7 +281,7 @@ header {
 }
 
 .abt-text h1:hover::after {
-  width: 30%;
+  width: 25%;
   background: white;
 }
 
@@ -321,7 +323,59 @@ header {
 .card:hover {
   transform: scale(1.05);
   border-color: white;
-  box-shadow: 0 0 20px rgba(93, 120, 255, 0.2);
+  box-shadow: 0 0 20px rgba(93, 120, 255, 0.4);
+}
+
+/* Certificate Cards */
+.certificate-card {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  height: 100%;
+}
+
+.certificate-card:hover {
+  transform: scale(1.05);
+  border-color: white;
+  box-shadow: 0 0 15px rgba(93, 120, 255, 0.4);
+}
+
+.card-img-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between; /* Changed from center to space-between */
+  padding: 5px;
+}
+
+.certificate-img {
+  max-height: 70%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.certificate-card label {
+  font-family: "Raleway", sans-serif;
+  color: white;
+  margin-top: 1rem;
+  font-size: 1rem;
+  font-weight: 400;
+  text-align: center;
+  word-break: break-word;
+  padding: 0 0.5rem;
+}
+
+/* Modal Styles */
+.modal-content {
+  background-color: rgba(0, 0, 0, 0.9) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.modal-body img {
+  max-height: 80vh;
+  width: auto;
+  max-width: 100%;
 }
 
 /* Desktop (1025px and above) */
@@ -379,6 +433,15 @@ header {
   .abt-text h1::after {
     width: 80px;
   }
+
+  .certificate-card label {
+    font-size: 0.9rem;
+    margin-top: 0.8rem;
+  }
+  
+  .card-img-container {
+    padding: 0.8rem;
+  }
 }
 
 /* Mobile (480px and below) */
@@ -417,6 +480,19 @@ header {
     line-height: 1.5;
     word-break: break-word;
     hyphens: auto;
+  }
+
+  .certificate-card label {
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+  }
+  
+  .card-img-container {
+    padding: 0.5rem;
+  }
+  
+  .certificate-img {
+    max-height: 60%; /* More space for label on small screens */
   }
   
   .slide::before {

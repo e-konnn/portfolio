@@ -315,6 +315,7 @@ header {
 .card:hover {
   transform: scale(1.05);
   border-color: white;
+  box-shadow: 0 0 20px rgba(93, 120, 255, 0.4)
 }
 
 /* Social Icons */
@@ -342,6 +343,7 @@ header {
   border-color: white;
   background-color: rgba(255, 255, 255, 0.1);
   transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(93, 120, 255, 0.4);
 }
 
 .social-icon {
@@ -424,7 +426,7 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-  background-color: #323f7d;
+  background-color: rgba(93, 120, 255, 0.4);
   letter-spacing: 1.5px;
 }
 

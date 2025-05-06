@@ -321,7 +321,7 @@ header {
 }
 
 .section-title:hover::after {
-  width: 30%;
+  width: 25%;
   background: white;
 }
 
@@ -337,11 +337,13 @@ header {
   transform: scale(1.05);
   border-color: white;
   background-color: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 20px rgba(93, 120, 255, 0.4);
 }
 
 .card-img-container {
   height: 100px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 0.5rem;
@@ -400,17 +402,6 @@ header {
   width: auto;
   margin: 0 auto;
   display: block;
-}
-
-/* Certificate Cards */
-.certificate-card {
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.certificate-card:hover {
-  transform: scale(1.05);
-  border-color: white;
 }
 
 /* Tablet (481px to 768px) */
@@ -511,7 +502,7 @@ header {
   }
   
   .card-img-container {
-    height: 70px;
+    height: 100px;
   }
   
   .tech-icon {
