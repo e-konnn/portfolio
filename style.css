@@ -135,6 +135,10 @@ section {
   color: white !important;
 }
 
+.highlight-name {
+  text-shadow: 0 0 15px rgba(93, 120, 255, 0.8); 
+}
+
 .landscape-card .card-text {
   font-size: 1.2rem;
   font-family: "Raleway", sans-serif;
