@@ -373,6 +373,11 @@ header {
   width: 120px;
 }
 
+.firebase-label {
+  font-size: 1rem;
+  line-height: 1.2;
+}
+
 .card:hover .tech-icon {
   transform: scale(1.1);
 }
