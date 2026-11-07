@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Edel Jhim Naag | Certification</title>
+      <link rel="icon" type="image/x-icon" href="image/mainlogo.png">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+      <link rel="stylesheet" type="text/css" href="certificationstyles.css">
+</head>
+<body>
+      <div id="page-transition" class="page-transition"></div>
+      <header>
+        <div class="logo">
+          <a href="index.html" class="transition-link">
+            <img src="image/mainlogo.png" alt="ENlogo" class="img-logo pulse">
+          </a>
+        </div>    
+        <nav class="nav-links">
+          <a href="index.html" class="slide transition-link">HOME</a>
+          <a href="about.html" class="slide transition-link">ABOUT</a>
+          <a href="techstack.html" class="slide transition-link">TECH STACK</a>
+          <a href="certification.html" class="slide transition-link">CERTIFICATION</a>
+          <a href="contact.html" class="slide transition-link">CONTACT</a>
+        </nav>
+        <button class="hamburger" aria-label="Menu">
+          <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+          </span>
+        </button>
+      </header>
+      <div class="abt-content">
+        <div class="container section-wrapper">
+          <div class="abt-text">
+            <h1>Certificates</h1> 
+          </div>
+          <div class="row g-4 justify-content-center">
+            <div class="col-md-4 col-6">
+              <div class="card text-center bg-dark text-white p-3 certificate-card" style="cursor: pointer;">
+                <div class="card-img-container">
+                  <img src="image/word-certi.png" class="img-fluid certificate-img" alt="MS-WORD"><br><label>MS Word 2019 Associate</label>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-6">
+              <div class="card text-center bg-dark text-white p-3 certificate-card" style="cursor: pointer;">
+                <div class="card-img-container">
+                  <img src="image/powerpoint-certi.png" class="img-fluid certificate-img" alt="MS-PPT"><br><label>MS PowerPoint 2019 Associate</label>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-6">
+              <div class="card text-center bg-dark text-white p-3 certificate-card" style="cursor: pointer;">
+                <div class="card-img-container">
+                  <img src="image/cloud-computing.png" class="img-fluid certificate-img" alt="cloud-computing"><br><label>IT Specialist - Cloud Computing</label>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-6">
+              <div class="card text-center bg-dark text-white p-3 certificate-card" style="cursor: pointer;">
+                <div class="card-img-container">
+                  <img src="image/html-css.png" class="img-fluid certificate-img" alt="html-css"><br><label>IT Specialist - HTML and CSS</label>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-6">
+              <div class="card text-center bg-dark text-white p-3 certificate-card" style="cursor: pointer;">
+                <div class="card-img-container">
+                  <img src="image/java-completion.png" class="img-fluid certificate-img" alt="java-comp"><br><label>Java Course Completion</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="certificateModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content bg-dark">
+            <div class="modal-header border-0">
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+              <img id="modalCertificateImage" src="" alt="Certificate" class="img-fluid">
+            </div>
+          </div>
+        </div>
+      </div>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+      <script>
+        // Page transition function
+        function handleTransition(event) {
+          if (event.target.classList.contains('transition-link') || 
+              event.target.closest('.transition-link')) {
+            event.preventDefault();
+            const target = event.target.closest('.transition-link');
+            const href = target.getAttribute('href');
+            
+            // Show the transition overlay
+            const transition = document.getElementById('page-transition');
+            transition.style.opacity = '1';
+            transition.style.visibility = 'visible';
+            
+            // After a short delay, navigate to the new page
+            setTimeout(() => {
+              window.location.href = href;
+            }, 500);
+          }
+        }
+        
+        // Apply transition when page loads
+        window.addEventListener('load', function() {
+          const transition = document.getElementById('page-transition');
+          transition.style.opacity = '0';
+          transition.style.visibility = 'hidden';
+        });
+        
+        // hamburger menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        
+        hamburger.addEventListener('click', () => {
+          hamburger.classList.toggle('active');
+          navLinks.classList.toggle('active');
+        });
+        
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+          link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('active');
+          });
+        });
+
+        // Certificate modal functionality
+        document.addEventListener('DOMContentLoaded', function() {
+          // Active link highlighting
+          const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+          const navLinks = document.querySelectorAll('.nav-links a');
+          
+          navLinks.forEach(link => {
+            const linkPage = link.getAttribute('href');
+            if (currentPage === linkPage || 
+               (currentPage === '' && linkPage === 'index.html')) {
+              link.classList.add('active');
+            }
+          });
+          
+          // Certificate modal
+          const certificateCards = document.querySelectorAll('.certificate-card');
+          const modal = new bootstrap.Modal(document.getElementById('certificateModal'));
+          const modalImage = document.getElementById('modalCertificateImage');
+          
+          certificateCards.forEach(card => {
+            card.addEventListener('click', function() {
+              const imgSrc = this.querySelector('img').src;
+              modalImage.src = imgSrc;
+              modal.show();
+            });
+          });
+          
+          // Add click event listener to document for transition links
+          document.addEventListener('click', handleTransition);
+        });
+      </script>
+    </body>
+</html>
